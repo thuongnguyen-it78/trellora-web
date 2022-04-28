@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import Boardbar from 'components/Boardbar'
-import Navbar from 'components/Navbar'
+import Header from 'components/Header'
 import Board from 'features/board'
 import React from 'react'
 
@@ -12,9 +12,10 @@ function MainLayout({ children }) {
         display: 'grid',
         gridTemplateRows: '40px 50px 1fr',
         backgroundColor: 'primary.main',
+        overflowY: 'hidden',
       }}
     >
-      <Navbar />
+      <Header />
       <Boardbar />
       <Board />
     </Box>

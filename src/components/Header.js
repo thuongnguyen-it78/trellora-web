@@ -1,7 +1,7 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import React from 'react'
 
-function Navbar(props) {
+function Header(props) {
   return (
     <Box
       sx={{
@@ -10,14 +10,14 @@ function Navbar(props) {
         backgroundColor: 'primary.dark',
         fontSize: '1.5rem',
         pl: '10px',
-        height: "var(--navbar-height)"
+        height: "var(--header-height)"
       }}
     >
-      Navbar
+      Header
     </Box>
   )
 }
 
-Navbar.propTypes = {}
+Header.propTypes = {}
 
-export default Navbar
+export default Header

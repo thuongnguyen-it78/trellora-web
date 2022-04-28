@@ -8,14 +8,14 @@ function Column(props) {
       sx={{
         backgroundColor: 'secondary.main',
         borderRadius: 1,
-        width: 300,
-        height: 'calc(100vh - var(--boardbar-height) - var(--navbar-height))',
+        minWidth: 310,
         py: 0.5,
+        maxHeight: 'calc(100vh - var(--boardbar-height) - var(--header-height) - 5px - 40px)'
       }}
     >
-      <Box sx={{ height: 36, lineHeight: '36px' }}>Header</Box>
+      <Box sx={{ height: 45, lineHeight: '45px' }}>Header</Box>
       <CardList />
-      <Box sx={{ height: 36, lineHeight: '36px' }}>Footer</Box>
+      <Box sx={{ height: 45, lineHeight: '45px' }}>Footer</Box>
     </Stack>
   )
 }

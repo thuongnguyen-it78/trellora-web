@@ -1,9 +1,38 @@
 import { Box } from '@mui/material'
-import React from 'react'
+import { initialBoard } from 'data/board'
+import React, { useState } from 'react'
 import ColumnList from './components/ColumnList'
 
 function Board(props) {
-  return  <ColumnList />
+  const [board, setBoard] = useState(initialBoard)
+  return (
+    <Box
+      height="100%"
+      sx={{
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        borderRadius: '3px',
+        height: 'calc(100vh - var(--boardbar-height) - var(--header-height) - 5px)',
+        ml: '10px',
+        py: '20px',
+        pb: '10px',
+        '&::-webkit-scrollbar': {
+          height: 12,
+          height: 12,
+        },
+        '&::-webkit-scrollbar-track': {
+          backgroundColor: '#00000026',
+          borderRadius: '5px',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#cacacabf',
+          borderRadius: '5px',
+        },
+      }}
+    >
+      <ColumnList />
+    </Box>
+  )
 }
 
 Board.propTypes = {}

@@ -4,11 +4,11 @@ import React from 'react'
 function Card({ card }) {
   if (card === 4 || card === 6)
     return (
-      <Box sx={{ backgroundColor: '#fff' }}>
+      <Box sx={{ backgroundColor: '#fff', borderRadius: "3px", minHeight: "70px", overflow: 'hidden' }}>
         <img src="https://i.pinimg.com/236x/24/7d/3a/247d3ae8f0e6b42c9267cfc1e96aa449.jpg" />
       </Box>
     )
-  return <Box sx={{ backgroundColor: '#fff' }}>Content 1</Box>
+  return <Box sx={{ backgroundColor: '#fff', borderRadius: "3px", minHeight: "70px", overflow: 'hidden' }}>Content 1</Box>
 }
 
 Card.propTypes = {}
