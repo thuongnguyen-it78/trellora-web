@@ -25,7 +25,7 @@ const customTheme = createTheme({
     secondary: {
       main: '#ebecf0',
       light: '#eee',
-      dark: '#757575',
+      dark: '#ebecf0',
     },
     warning: {
       main: '#FFBF33',
