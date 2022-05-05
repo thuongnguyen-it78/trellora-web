@@ -42,3 +42,13 @@ export function unaccent(str) {
   str = str.replace(/\u02C6|\u0306|\u031B/g, '') // Â, Ê, Ă, Ơ, Ư
   return str
 }
+
+export const mapOrder = (array, order, key) => {
+  if(!Array.isArray(array) || !Array.isArray(order) || !key) return []
+  if(array.length === 0 || order.length === 0) return array
+
+  const newArray = [...array]
+  newArray.sort((a, b) => order.indexOf(a[key]) - order.indexOf(b[key]));
+  
+  return newArray;
+};

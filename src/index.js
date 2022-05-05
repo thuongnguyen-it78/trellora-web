@@ -13,17 +13,17 @@ const queryClient = new QueryClient()
 
 const customTheme = createTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Source Sans Pro',
     fontWeight: 400,
   },
   palette: {
     primary: {
-      main: '#F4A634',
+      main: '#0079bf',
       light: '#FFBF33',
-      dark: '#EB9D34',
+      dark: '#0067a3',
     },
     secondary: {
-      main: '#9e9e9e',
+      main: '#ebecf0',
       light: '#eee',
       dark: '#757575',
     },

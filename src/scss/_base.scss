@@ -1,0 +1,17 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 1.3em;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// variables
+:root {
+    --boardbar-height: 50px;
+    --header-height: 40px;
+}
+
+* {
+    box-sizing: border-box;
+}
