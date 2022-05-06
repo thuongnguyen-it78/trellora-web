@@ -24,24 +24,24 @@ function ColumnList({ columnList }) {
             <Column column={column} />
           </Draggable>
         ))}
-        <CommonButton
-          variant="contained"
-          color="secondary"
-          sx={{
-            backgroundColor: 'secondary.main',
-            border: 'none',
-            borderRadius: 1,
-            height: 45,
-            lineHeight: '45px',
-            pb: 0.5,
-            margin: '0 auto',
-            minWidth: 310,
-          }}
-          startIcon={<AddCircleOutlineIcon sx={{ fontSize: 40 }} />}
-        >
-          Add column
-        </CommonButton>
       </Container>
+      <CommonButton
+        variant="contained"
+        color="secondary"
+        sx={{
+          backgroundColor: 'secondary.main',
+          border: 'none',
+          borderRadius: 1,
+          height: 45,
+          lineHeight: '45px',
+          pb: 0.5,
+          margin: '0 auto',
+          minWidth: 310,
+        }}
+        startIcon={<AddCircleOutlineIcon sx={{ fontSize: 40 }} />}
+      >
+        Add column
+      </CommonButton>
     </Stack>
   )
 }

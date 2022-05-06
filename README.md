@@ -1,4 +1,6 @@
 # Trellora Web
+The project manages tasks easily for everyone
+<br><a href="https://trellora-web.vercel.app/">Live View</a>
 
 ### Key word
 - Hot reload
