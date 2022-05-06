@@ -1,8 +1,17 @@
 import { Stack } from '@mui/material'
 import React from 'react'
 import Card from './Card'
+import { Container, Draggable } from 'react-smooth-dnd'
 
 function CardList({ cardList }) {
+  const onCardDrop = (column, e) => {
+    console.log(column, e)
+  }
+
+  const getCardPayload = () => {
+    
+  }
+
   return (
     <Stack
       spacing={1}
@@ -17,18 +26,41 @@ function CardList({ cardList }) {
         },
         '&::-webkit-scrollbar-track': {
           backgroundColor: '#091e4214',
-          borderRadius: 16
+          borderRadius: 16,
         },
         '&::-webkit-scrollbar-thumb': {
           backgroundColor: '#bfc4ce',
-          borderRadius: 16
+          borderRadius: 16,
         },
         flex: '1',
       }}
     >
-      {cardList.map((card) => (
-        <Card card={card} />
-      ))}
+      <Container
+        groupName="col"
+        onDrop={(e) => onCardDrop("column.id", e)}
+        getChildPayload={(index) => getCardPayload("column.id", index)}
+        dragClass="card-ghost"
+        dropClass="card-ghost-drop"
+        onDragEnter={() => {
+          console.log('drag enter:', "column.id")
+        }}
+        onDragLeave={() => {
+          console.log('drag leave:', "column.id")
+        }}
+        onDropReady={(p) => console.log('Drop ready: ', p)}
+        dropPlaceholder={{
+          animationDuration: 150,
+          showOnTop: true,
+          className: 'drop-preview',
+        }}
+        dropPlaceholderAnimationDuration={200}
+      >
+        {cardList.map((card) => (
+          <Draggable key={card.id}>
+            <Card card={card} />
+          </Draggable>
+        ))}
+      </Container>
     </Stack>
   )
 }
