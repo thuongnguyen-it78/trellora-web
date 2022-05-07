@@ -41,6 +41,7 @@ The project manages tasks easily for everyone
 - 403: Forbidden
 - 404: Not found
 - 500: Internal Server Error
+- 502: Bad Gate
 
 ### 3 things should check when call api error
 - Check url
