@@ -8,8 +8,8 @@ function CardList({ cardList }) {
     console.log(column, e)
   }
 
-  const getCardPayload = () => {
-    
+  const getCardPayload = (payload) => {
+    console.log(payload)
   }
 
   return (
