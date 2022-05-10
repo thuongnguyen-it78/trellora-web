@@ -1,17 +1,27 @@
 import { Paper, Stack } from '@mui/material'
-import React from 'react'
+import React, { useRef } from 'react'
 import Column from './Column'
 import { Container, Draggable } from 'react-smooth-dnd'
 import CommonButton from 'components/CommonButton'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 
-function ColumnList({ columnList }) {
-  const onColumnDrop = () => {}
+function ColumnList({ columnList, onColumnChange }) {
+  const payloadRef = useRef(null)
+
+  const onColumnDrop = (values) => {
+    onColumnChange({ ...values, payload: payloadRef.current })
+  }
+
+  const getColumnPayload = (payload) => {
+    payloadRef.current = payload
+  }
+
   return (
     <Stack direction="row" spacing={2} alignItems="flex-start">
       <Container
         orientation="horizontal"
         onDrop={onColumnDrop}
+        getChildPayload={getColumnPayload}
         dragHandleSelector=".column-drag-handle"
         dropPlaceholder={{
           animationDuration: 150,

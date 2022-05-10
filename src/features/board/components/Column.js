@@ -96,7 +96,6 @@ function Column({ column }) {
         <CommonButton
           sx={{
             border: 'none',
-            borderRadius: 0,
             width: '100%',
             borderRadius: 1,
           }}

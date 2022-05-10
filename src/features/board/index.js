@@ -1,11 +1,16 @@
 import { Box } from '@mui/material'
 import { initialBoard } from 'data/board'
 import React, { useState } from 'react'
-import { mapOrder } from 'utils'
+import { applyDrag, mapOrder } from 'utils'
 import ColumnList from './components/ColumnList'
 
 function Board(props) {
   const [board, setBoard] = useState(initialBoard.boards[0])
+
+  const handleColumnChange = (values) => {
+    setBoard({ ...board, columnOrder: applyDrag(board.columnOrder, values) })
+  }
+
   return (
     <Box
       height="100%"
@@ -31,7 +36,10 @@ function Board(props) {
         },
       }}
     >
-      <ColumnList columnList={mapOrder(board.columns, board.columnOrder, 'id')}/>
+      <ColumnList
+        columnList={mapOrder(board.columns, board.columnOrder, 'id')}
+        onColumnChange={handleColumnChange}
+      />
     </Box>
   )
 }
