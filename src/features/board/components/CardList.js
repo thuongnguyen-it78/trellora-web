@@ -3,14 +3,14 @@ import React from 'react'
 import Card from './Card'
 import { Container, Draggable } from 'react-smooth-dnd'
 
-function CardList({ cardList }) {
+function CardList({ cardList, columnId }) {
 
-  const onCardDrop = (values) => {
-    console.log(values)
+  const onCardDrop = (columnId, values) => {
+    console.log({columnId, values})
   }
 
-  const getCardPayload = (payload) => {
-    console.log(payload)
+  const getCardPayload = (columnId, payload) => {
+    console.log({columnId, payload})
   } 
 
   return (
@@ -38,8 +38,8 @@ function CardList({ cardList }) {
     >
       <Container
         groupName="col"
-        onDrop={onCardDrop}
-        getChildPayload={getCardPayload}
+        onDrop={(e) => onCardDrop(columnId, e)}
+        getChildPayload={(e) => getCardPayload(columnId, e)}
         dragClass="card-ghost"
         dropClass="card-ghost-drop"
         dropPlaceholder={{

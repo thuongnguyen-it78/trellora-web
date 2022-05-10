@@ -91,7 +91,7 @@ function Column({ column }) {
           {column?.cards?.length}
         </Typography>
       </Stack>
-      <CardList cardList={mapOrder(column.cards, column.cardOrder, 'id')} />
+      <CardList cardList={mapOrder(column.cards, column.cardOrder, 'id')} columnId={column.id}/>
       <Box sx={{ height: 45, lineHeight: '45px', pb: 0.5 }}>
         <CommonButton
           sx={{
